@@ -10,6 +10,7 @@ export const organizationSchema = z.object({
   permission: z.string(),
   users: userSchema,
   organization_staffs: organizationStaffsSchema.array(),
+  'organization_staffs.users_id': z.string(),
   created_at: z.date(),
   updated_at: z.date(),
 });
