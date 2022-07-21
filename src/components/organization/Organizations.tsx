@@ -16,7 +16,7 @@ import {
 import { useInputState } from '@mantine/hooks';
 import { useState } from 'react';
 import useCreateOrganizations from '../../services/organizations/query-hooks/useCreateOrganization';
-import useGetOrganizationByOwner from '../../services/organizations/query-hooks/useGetOrganizations';
+import { useGetOrganizationByStaffs } from '../../services/organizations/query-hooks/useGetOrganizations';
 import useGetUser from '../../services/users/query-hooks/useGetUser';
 import { UserSchema } from '../../services/users/schema/user.query.schema';
 import { app_permission } from '../../utils/const/appType';
@@ -83,7 +83,7 @@ function CreateOrganization(props: PropsModal) {
 const Organizations = () => {
   const { data: userData } = useGetUser();
   const [opened, setOpened] = useState(false);
-  const { data: organizations, isLoading } = useGetOrganizationByOwner();
+  const { data: organizations, isLoading } = useGetOrganizationByStaffs();
 
   return (
     <Box>
